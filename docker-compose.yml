@@ -6,6 +6,7 @@ nginx:
   ports:
     - "8001:8001"
     - "8002:8002"
+    - "8003:8003"
   links:
     - php7-fpm:docker-php7-fpm
     - mysql:docker-mysql

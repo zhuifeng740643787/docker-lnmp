@@ -7,4 +7,4 @@ WORKDIR /code
 COPY ./conf/conf.d/* /etc/nginx/conf.d/
 COPY ./conf/nginx.conf /etc/nginx/
 VOLUME ["/code/", "/access_log/"]
-EXPOSE 8001 8002
+EXPOSE 8001 8002 8003
