@@ -1,0 +1,28 @@
+nginx:
+  build: ./nginx
+  volumes:
+    - ./../code:/code
+    - ./nginx/log:/access_log
+  ports:
+    - "8001:8001"
+    - "8002:8002"
+  links:
+    - php7-fpm:docker-php7-fpm
+    - mysql:docker-mysql
+
+php7-fpm:
+  build: ./php7-fpm
+  volumes:
+    - ./../code:/code
+    - ./php7-fpm/log:/log
+  links:
+    - mysql:docker-mysql
+
+mysql:
+  build: ./mysql
+  restart: always
+  volumes:
+    - ./mysql/data:/var/lib/mysql
+    - ./mysql/log:/var/log/mysql
+  ports:
+      - "3307:3306"

@@ -1,0 +1,6 @@
+mysql/log/*
+mysql/data/*
+nginx/log/*
+php7-fpm/log/*
+.idea
+.DS_Store
